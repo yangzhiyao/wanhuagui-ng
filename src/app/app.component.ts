@@ -10,6 +10,9 @@ export class AppComponent implements OnInit {
   rbig: number;
   rsmall: number;
   rpen: number;
+  speed: number;
+  width: number;
+  color: string;
 
   ox: number;
   oy: number;
@@ -23,17 +26,20 @@ export class AppComponent implements OnInit {
   ctx: CanvasRenderingContext2D;
 
   ngOnInit(): void {
+    this.speed = 100;
     this.rbig = 300;
     this.rsmall = 175;
     this.rpen = 155;
+    this.width = 1;
+    this.color = '#c00';
   }
 
   startDraw() {
     const neCanvas = this.canvas.nativeElement;
     neCanvas.height = neCanvas.height;
     this.ctx = neCanvas.getContext('2d');
-    this.ctx.lineWidth = 1;
-    this.ctx.strokeStyle = 'green';
+    this.ctx.lineWidth = this.width;
+    this.ctx.strokeStyle = this.color;
 
     // 求执行次数（最小公倍数/静圆半径）
     const rb = this.rbig;
@@ -49,7 +55,7 @@ export class AppComponent implements OnInit {
       n = tmp;
     }
 
-    const maxdegree = rs / m * 2 * Math.PI;
+    const maxdegree = rs / m * 2 * Math.PI + 1;
 
     // 绘图
     this.isFirst = true;
@@ -68,7 +74,7 @@ export class AppComponent implements OnInit {
         x = Math.round(rp * Math.cos(degree * ((rb) / rs - 1)) + (rb - rs) * Math.cos(degree));
         y = Math.round(rp * Math.sin(degree * ((rb) / rs - 1)) - (rb - rs) * Math.sin(degree));
         this.toPoint(x, y);
-        degree += 0.02;
+        degree += 0.1 * (this.speed / 100);
         // console.log(degree % 0.5);
         this.ctx.stroke();
         if (degree <= maxdegree) {
@@ -76,7 +82,7 @@ export class AppComponent implements OnInit {
         } else {
           this.ctx.stroke();
         }
-      }, 10);
+      }, 1);
     };
 
     step();
