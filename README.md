@@ -1,27 +1,7 @@
-# WanHuaGuiH5
+# 万花规
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+小时候玩过的万花规，万花规可以画出很多神奇图案。万花规所画的奇妙图形就是一个小圆，内切大圆做滚动时小圆内部某点画出来的轨迹所形成的。利用展品提供的触碰笔的笔尖，穿过小圆的内孔使得小圆沿着大圆做顺时针的滚动。在我们的屏幕上方就可以显示出一条曲线的轨迹，这就是我们的内切摆线，继续画这样的曲线就可以得到奇妙的图案。
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
