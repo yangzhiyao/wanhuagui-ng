@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     this.rsmall = 175;
     this.rpen = 155;
     this.width = 1;
-    this.color = '#c00';
+    this.color = '#8b0000';
   }
 
   startDraw() {
